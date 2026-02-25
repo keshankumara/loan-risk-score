@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:3306/loanrisk
+    username: admin
+    password: admin123
+  jpa:
+    hibernate:
+      ddl-auto: update    # automatically creates tables based on @Entity
+    show-sql: true         # show queries in console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
