@@ -5,24 +5,17 @@ import com.keshan.loanrisk.application.port.RiskAssessmentRepository;
 import com.keshan.loanrisk.application.mapper.LoanMapper;
 import com.keshan.loanrisk.application.dto.*;
 import com.keshan.loanrisk.domain.model.*;
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
 
-
+@Service
+@RequiredArgsConstructor
 public class CalculateRiskUseCase {
 
     private final RiskCalculator riskCalculator;
     private final LoanApplicationRepository loanRepository;
     private final RiskAssessmentRepository assessmentRepository;
     private final LoanMapper mapper;
-
-    public CalculateRiskUseCase(RiskCalculator riskCalculator,
-                                LoanApplicationRepository loanRepository,
-                                RiskAssessmentRepository assessmentRepository,
-                                LoanMapper mapper) {
-        this.riskCalculator = riskCalculator;
-        this.loanRepository = loanRepository;
-        this.assessmentRepository = assessmentRepository;
-        this.mapper = mapper;
-    }
 
     public LoanRiskResponseDTO execute(LoanRiskRequestDTO requestDTO) {
 

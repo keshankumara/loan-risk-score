@@ -27,6 +27,8 @@ public class RiskAssessmentEntity {
     public void setScore(int score) { this.score = score; }
     public String getRiskLevel() { return riskLevel; }
     public void setRiskLevel(String riskLevel) { this.riskLevel = riskLevel; }
+    public String getRecommendation() { return recommendation; }
+    public void setRecommendation(String recommendation) { this.recommendation = recommendation; }
     public LoanApplicationEntity getLoan() { return loan; }
     public void setLoan(LoanApplicationEntity loan) { this.loan = loan; }
 }
