@@ -1,4 +1,4 @@
-package com.keshan.loanrisk.application.dto;
+package com.keshan.loanrisk.presentation.dto;
 import jakarta.validation.constraints.*;
 
 public class LoanRiskRequestDTO {
@@ -16,14 +16,6 @@ public class LoanRiskRequestDTO {
 
     @Min(value = 0, message = "Employment years cannot be negative")
     private int employmentYears;
-
-    /* 
-    private String applicantName;
-    private double monthlyIncome;
-    private double existingDebt;
-    private int latePayments;
-    private int employmentYears; */
-
 
     public LoanRiskRequestDTO() {}
 

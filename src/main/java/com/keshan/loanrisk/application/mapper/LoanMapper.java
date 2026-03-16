@@ -1,23 +1,24 @@
 package com.keshan.loanrisk.application.mapper;
 import com.keshan.loanrisk.domain.model.*;
-import com.keshan.loanrisk.application.dto.*;
+import com.keshan.loanrisk.application.request.LoanRiskRequest;
+import com.keshan.loanrisk.application.response.LoanRiskResponse;
 
 public class LoanMapper {
 
-    public LoanApplication toDomain(LoanRiskRequestDTO dto) {
+    public LoanApplication toDomain(LoanRiskRequest request) {
 
         return new LoanApplication(
-                dto.getApplicantName(),
-                dto.getMonthlyIncome(),
-                dto.getExistingDebt(),
-                dto.getLatePayments(),
-                dto.getEmploymentYears()
+                request.getApplicantName(),
+                request.getMonthlyIncome(),
+                request.getExistingDebt(),
+                request.getLatePayments(),
+                request.getEmploymentYears()
         );
     }
 
-    public LoanRiskResponseDTO toResponse(RiskAssessment assessment) {
+    public LoanRiskResponse toResponse(RiskAssessment assessment) {
 
-        return new LoanRiskResponseDTO(
+        return new LoanRiskResponse(
                 assessment.getScore(),
                 assessment.getRiskLevel().name(),
                 assessment.getRecommendation().name()
